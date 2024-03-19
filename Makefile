@@ -117,6 +117,7 @@ install :
 	pip install pip-tools
 	pip-compile requirements.in -o final_requirements.txt --allow-unsafe --rebuild --verbose
 	pip install -e . -r final_requirements.txt
+	pip install checklist --upgrade-strategy only-if-needed
 	# These nltk packages are used by the 'checklist' module.
 	$(NLTK_DOWNLOAD_CMD)
 
